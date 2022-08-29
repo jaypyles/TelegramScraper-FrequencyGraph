@@ -69,7 +69,7 @@ dfDict = {
 df2 = pd.DataFrame(dfDict)
 df2.sort_values(by=['Count'], inplace=True)
 
-def plotGraphElse(): #will only show this amount of words  
+def plotGraphBar(): #will only show this amount of words  
     rows = int(input("How many words would you like to show?"))
     df2.drop(df2.index[:-rows], inplace=True)
     fig = plt.figure(figsize=(20,10))
@@ -77,17 +77,21 @@ def plotGraphElse(): #will only show this amount of words
     plt.xticks(rotation=90)
     plt.show()
 
-def plotGraphNormal():
+def plotGraphPie(): #will only show this amount of words  
+    rows = int(input("How many words would you like to show?"))
+    df2.drop(df2.index[:-rows], inplace=True)
     fig = plt.figure(figsize=(20,10))
-    plt.bar(df2['Word'], df2['Count'])
+    plt.pie(df2['Count'], labels =df2['Word'], autopct='%1.2f%%')
     plt.xticks(rotation=90)
     plt.show()
 
-choice = input("Would you like to change the amount of words in the graph? y/n")
-if choice == "y":
-    plotGraphElse()
+choice = input("Which type of graph would you like? Options are: bar and pie. If the answer is typed wrong, it will default to bar.")
+if choice == "bar":
+    plotGraphBar()
+elif choice == "pie": 
+    plotGraphPie()
 else: 
-    plotGraphNormal()
+    plotGraphBar()
 
 
 
