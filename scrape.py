@@ -10,8 +10,6 @@ import numpy as np
 import random
 import xlsxwriter 
 
-#comment for test 
-
 date_of_post = datetime.datetime(2022, 8, 20) # 1: Enter your date in the form of (year, month, day)
 api_id = 10248804   # 2: Enter your api_id from telegram 
 api_hash = '588f31db7d8df29fa32eab7ccb7a35f0' #3: Enter your api_hash from telegram 
