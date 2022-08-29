@@ -10,12 +10,12 @@ import numpy as np
 import random
 import xlsxwriter 
 
-date_of_post = datetime.datetime(2022, 8, 20) # 1: Enter your date in the form of (year, month, day)
-api_id = 10248804   # 2: Enter your api_id from telegram 
-api_hash = '588f31db7d8df29fa32eab7ccb7a35f0' #3: Enter your api_hash from telegram 
+date_of_post = datetime.datetime(DATE) # 1: Enter your date in the form of (year, month, day)
+api_id = API_ID  # 2: Enter your api_id from telegram 
+api_hash = "API_HASH" #3: Enter your api_hash from telegram 
 
 chats=[]
-channel_frame = pd.read_excel(r'C:\Users\jayde\Desktop\Test\Channels.xlsx')# 4: enter your telegram channels @'s into Channels.xlsx
+channel_frame = pd.read_excel(r'C:\Users\...')# 4: enter your telegram channels @'s into Channels.xlsx
 for ind in channel_frame.index:
     chats.append(channel_frame["Channel @'s"][ind])
 
@@ -38,7 +38,7 @@ output = "output-" + str(ty) +".xlsx"
 
 excelChoice = input("Would you like to download the messages? y/n")
 if excelChoice == "y":
-    df.to_excel(r'C:\Users\jayde\Desktop\Test\Outputs'+ r'\\'+ output, index=False, header=True)
+    df.to_excel(r'C:\Users\...\Outputs'+ r'\\'+ output, index=False, header=True)
     
 list_of_words = []
 word_count = {}
